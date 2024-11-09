@@ -114,6 +114,13 @@ export const system = createSystem(defaultConfig, {
 				textDecoration: 'underline',
 			},
 		},
+		'a svg': {
+			color: '#EAEAEA',
+			marginRight: '0.5em',
+		},
+		'a.active svg': {
+			color: '#00FFB2',
+		},
 	},
 	theme: { tokens },
 })
