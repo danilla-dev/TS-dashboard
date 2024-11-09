@@ -1,5 +1,4 @@
-// types.ts
-export interface User {
+export interface Users {
 	id: string
 	name: string
 	email: string
