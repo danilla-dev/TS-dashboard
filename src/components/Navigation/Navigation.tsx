@@ -3,11 +3,7 @@ import { HStack } from '@chakra-ui/react'
 import { AiOutlineDashboard } from 'react-icons/ai'
 import { FaUsers, FaCalendarDays } from 'react-icons/fa6'
 import { NavLink } from 'react-router-dom'
-
-type NavLinkType = {
-	to: string
-	icon: React.ReactElement
-}
+import { NavLinkType } from '../../types/navigation.types'
 
 const navLinks: NavLinkType[] = [
 	{ to: '/', icon: <AiOutlineDashboard /> },
