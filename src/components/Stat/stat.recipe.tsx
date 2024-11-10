@@ -46,7 +46,20 @@ export const statLabelRecipe = defineRecipe({
 	base: {
 		fontSize: '1.2rem',
 		fontWeight: 'bold',
-		color: '{colors.textPrimary}',
+		color: '{colors.accent}',
+	},
+	variants: {
+		size: {
+			sm: {
+				fontSize: '1.4rem',
+			},
+			md: {
+				fontSize: '1.8rem',
+			},
+			lg: {
+				fontSize: '2rem',
+			},
+		},
 	},
 })
 export const statValueTextRecipe = defineRecipe({

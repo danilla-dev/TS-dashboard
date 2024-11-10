@@ -2,7 +2,7 @@ import { chakra, HTMLChakraProps } from '@chakra-ui/react'
 import { AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai'
 import { statRecipe, statLabelRecipe, statValueTextRecipe, statValueUnitRecipe } from './stat.recipe'
 export interface StatProps extends HTMLChakraProps<'button'> {
-	size?: 'sm' | 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg' | { md: 'md' | 'lg'; lg: 'lg' | 'wide' }
 }
 
 export const Stat = chakra('dl', statRecipe) as React.FC<StatProps> & {

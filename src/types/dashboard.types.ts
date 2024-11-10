@@ -23,3 +23,20 @@ export interface DashboardCardData {
 	value: number | undefined
 	formatOptions?: object
 }
+export interface chartsData {
+	id: string
+	title: string
+	value: RevenueTrend[] | TrafficSource[] | undefined
+}
+export type chartData = {
+	date?: string
+	value?: number
+	source?: string
+}
+export interface LinechartProps {
+	chartData?: chartData[]
+	title?: string
+}
+export interface DashboardStatsProps {
+	card?: DashboardCardData
+}

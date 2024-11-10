@@ -12,7 +12,7 @@ function App() {
 			<header id='header'>
 				<Navigation />
 			</header>
-			<Box as='main' id='main' p='2em'>
+			<Box as='main' id='main' p='2em' pb={100} minH='100vh' maxW={1400} ml='auto' mr='auto'>
 				<Routes>
 					<Route path='/' element={<Dashboard />}></Route>
 					<Route path='/users' element={<Users />}></Route>

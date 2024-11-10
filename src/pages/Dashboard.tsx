@@ -1,9 +1,11 @@
 import React from 'react'
-import { HStack } from '@chakra-ui/react'
+import { HStack, VStack } from '@chakra-ui/react'
 import { useDashboardData } from '../hooks/useDashboardData'
 import { Card } from '../components/Card/Card'
-import { DashboardCardData } from '../types/dashboard.types'
+import { DashboardCardData, chartData, chartsData } from '../types/dashboard.types'
 import { Stat } from '../components/Stat/Stat'
+import LineChartCard from '../components/LineChartCard'
+import DashboardStats from '../components/DashboardStats'
 
 const Dashboard: React.FC = () => {
 	const data = useDashboardData()
@@ -19,24 +21,30 @@ const Dashboard: React.FC = () => {
 		{ id: 'revenue', title: 'Revenue', value: data?.revenue, formatOptions: { style: 'currency', currency: 'USD' } },
 	]
 
-	const chartData = [
+	const chartsData: chartsData[] = [
 		{ id: 'revenueTrend', title: 'Revenue Trend', value: data?.revenueTrend },
 		{ id: 'trafficSources', title: 'Traffic Sources', value: data?.trafficSources },
 	]
 	return (
-		<HStack id='dashboard' h='100vh'>
-			<HStack className='dashboard-data-cards-container' flexWrap='wrap' align='center' justify='center'>
+		<VStack id='dashboard' minH='100vh' gap='2em'>
+			<HStack className='dashboard-data-cards-container' flexWrap='wrap' align='center' justify='center' gap='1.5em'>
 				{cardData.map(card => (
-					<Card key={card.id} className='dashboard-data-card' borderType='solid'>
-						<Stat>
-							<Stat.Label>{card.title}</Stat.Label>
-							<Stat.ValueText value={card.value} formatOptions={card.formatOptions} />
-						</Stat>
-					</Card>
+					<DashboardStats key={card.id} card={card as DashboardCardData} />
 				))}
 			</HStack>
-			<HStack className='dashboard-data-charts-container'></HStack>
-		</HStack>
+			<HStack
+				className='dashboard-data-charts-container'
+				flexWrap='wrap'
+				align='center'
+				justify='center'
+				w='100%'
+				gap='1.5em'
+			>
+				{chartsData.map(chart => (
+					<LineChartCard key={chart.id} chartData={chart.value as chartData[]} title={chart.title} />
+				))}
+			</HStack>
+		</VStack>
 	)
 }
 

@@ -2,7 +2,7 @@ import { chakra, HTMLChakraProps } from '@chakra-ui/react'
 import { cardRecipe, cardBodyRecipe, cardFooterRecipe, cardHeaderRecipe } from './card.recipe'
 
 export interface CardProps extends HTMLChakraProps<'div'> {
-	size?: 'sm' | 'md' | 'lg'
+	size?: 'sm' | 'md' | 'lg' | 'wide' | { md: 'md' | 'lg'; lg: 'lg' | 'wide' }
 	borderType?: 'none' | 'solid' | 'outline'
 }
 

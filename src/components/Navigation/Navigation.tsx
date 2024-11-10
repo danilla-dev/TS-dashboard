@@ -20,10 +20,11 @@ const Navigation: React.FC = () => {
 			id='navigation'
 			w='100%'
 			h={50}
-			bgColor='primary'
+			bgColor='secondary'
 			color='textPrimary'
 			fontSize={{ base: '2.4rem' }}
 			justifyContent='space-around'
+			zIndex={10}
 		>
 			{navLinks.map((link, index) => (
 				<NavLink

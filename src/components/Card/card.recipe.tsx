@@ -3,7 +3,7 @@ import { defineRecipe } from '@chakra-ui/react'
 export const cardRecipe = defineRecipe({
 	base: {
 		borderRadius: '0.6em', // Większe zaokrąglenie
-		boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtelny cień
+		boxShadow: '0 4px 12px rgba(122, 92, 250, 0.5)', // Subtelny cień
 		padding: '1.5em',
 		backgroundColor: '{colors.primary}', // Kolor tła karty z tokena
 		color: '{colors.textPrimary}', // Kolor tekstu z tokena
@@ -34,6 +34,12 @@ export const cardRecipe = defineRecipe({
 				width: '420px',
 				fontSize: '2rem',
 			},
+			wide: {
+				minW: '100%',
+				minWidth: '300px',
+				fontSize: '1.8rem',
+				padding: '1em',
+			},
 		},
 		borderType: {
 			solid: {
@@ -53,13 +59,13 @@ export const cardHeaderRecipe = defineRecipe({
 		fontSize: '1.6rem',
 		fontWeight: 'bold',
 		marginBottom: '1em',
-		color: '{colors.textPrimary}',
+		color: '{colors.accent}',
 	},
 })
 
 export const cardBodyRecipe = defineRecipe({
 	base: {
-		fontSize: '1rem',
+		fontSize: '1.4rem',
 		color: '{colors.textSecondary}',
 	},
 })

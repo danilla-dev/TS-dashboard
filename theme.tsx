@@ -2,7 +2,7 @@ import { createSystem, defaultConfig, defineLayerStyles, defineTokens } from '@c
 
 const tokens = defineTokens({
 	colors: {
-		primary: { value: '#7A5CFA' }, // Fiolet wpadający w niebieski - główny kolor
+		primary: { value: '#7A5CFAFF' }, // Fiolet wpadający w niebieski - główny kolor
 		secondary: { value: '#4B3A77' }, // Ciemny fiolet - pomocniczy kolor
 		accent: { value: '#00FFB2' }, // Jasny neonowy zielony - akcentowy (bez zmian)
 		background: { value: '#1E1B29' }, // Tło - ciemny fioletowo-szary
