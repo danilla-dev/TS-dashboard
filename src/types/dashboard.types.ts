@@ -16,3 +16,9 @@ export interface DashboardData {
 	revenueTrend: RevenueTrend[]
 	trafficSources: TrafficSource[]
 }
+
+export interface DashboardCardData {
+	id: string
+	title: string
+	value: number | undefined
+}

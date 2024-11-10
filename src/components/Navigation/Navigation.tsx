@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
 			id='navigation'
 			w='100%'
 			h={50}
-			bgColor='secondary'
+			bgColor='primary'
 			color='textPrimary'
 			fontSize={{ base: '2.4rem' }}
 			justifyContent='space-around'

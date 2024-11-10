@@ -5,8 +5,11 @@ export const cardRecipe = defineRecipe({
 		borderRadius: '0.6em', // Większe zaokrąglenie
 		boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtelny cień
 		padding: '1.5em',
-		backgroundColor: '{colors.background}', // Kolor tła karty z tokena
+		backgroundColor: '{colors.primary}', // Kolor tła karty z tokena
 		color: '{colors.textPrimary}', // Kolor tekstu z tokena
+		width: '45%',
+		minWidth: '150px',
+		flex: '1 1 0', // Rozciągliwość karty
 		transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Płynniejsza animacja
 		_hover: {
 			boxShadow: '0 6px 16px rgba(0, 0, 0, 0.15)', // Zwiększony cień przy hoverze
@@ -16,6 +19,7 @@ export const cardRecipe = defineRecipe({
 			boxShadow: '0 0 0 3px {colors.accent}', // Fokus na karcie
 		},
 	},
+	className: 'card',
 	variants: {
 		size: {
 			sm: {
