@@ -21,4 +21,5 @@ export interface DashboardCardData {
 	id: string
 	title: string
 	value: number | undefined
+	formatOptions?: object
 }

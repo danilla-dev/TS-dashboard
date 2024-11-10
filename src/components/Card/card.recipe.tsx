@@ -48,3 +48,25 @@ export const cardRecipe = defineRecipe({
 		},
 	},
 })
+export const cardHeaderRecipe = defineRecipe({
+	base: {
+		fontSize: '1.6rem',
+		fontWeight: 'bold',
+		marginBottom: '1em',
+		color: '{colors.textPrimary}',
+	},
+})
+
+export const cardBodyRecipe = defineRecipe({
+	base: {
+		fontSize: '1rem',
+		color: '{colors.textSecondary}',
+	},
+})
+export const cardFooterRecipe = defineRecipe({
+	base: {
+		fontSize: '0.9rem',
+		color: '{colors.textMuted}',
+		marginTop: '1em',
+	},
+})

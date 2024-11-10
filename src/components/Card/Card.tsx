@@ -1,5 +1,5 @@
 import { chakra, HTMLChakraProps } from '@chakra-ui/react'
-import { cardRecipe } from './card.recipe'
+import { cardRecipe, cardBodyRecipe, cardFooterRecipe, cardHeaderRecipe } from './card.recipe'
 
 export interface CardProps extends HTMLChakraProps<'div'> {
 	size?: 'sm' | 'md' | 'lg'
@@ -12,26 +12,8 @@ export const Card = chakra('div', cardRecipe) as React.FC<CardProps> & {
 	Footer: React.FC<HTMLChakraProps<'div'>>
 }
 
-Card.Header = chakra('div', {
-	base: {
-		fontSize: '1.6rem',
-		fontWeight: 'bold',
-		marginBottom: '1em',
-		color: '{colors.textPrimary}',
-	},
-})
+Card.Header = chakra('div', cardHeaderRecipe)
 
-Card.Body = chakra('div', {
-	base: {
-		fontSize: '1rem',
-		color: '{colors.textSecondary}',
-	},
-})
+Card.Body = chakra('div', cardBodyRecipe)
 
-Card.Footer = chakra('div', {
-	base: {
-		fontSize: '0.9rem',
-		color: '{colors.textMuted}',
-		marginTop: '1em',
-	},
-})
+Card.Footer = chakra('div', cardFooterRecipe)
