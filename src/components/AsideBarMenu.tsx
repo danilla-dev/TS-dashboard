@@ -4,11 +4,10 @@ import { AiOutlineDashboard, AiOutlineMenuFold, AiOutlineMenuUnfold } from 'reac
 import { FaUsers, FaCalendarDays } from 'react-icons/fa6'
 import { NavLink } from 'react-router-dom'
 import { fa } from '@faker-js/faker'
+import { useAsideMenu } from '../hooks/useAsideMenu'
 
 const AsideBarMenu = () => {
-	const [menuWidth, setMenuWidth] = useState(45)
-	const [isMenuOpen, setIsMenuOpen] = useState(false)
-	// move to other file
+	const { menuWidth, isMenuOpen, handleToggleOpenMenu } = useAsideMenu()
 	const navigationLinks = [
 		{
 			id: 'dashboard',
@@ -29,11 +28,6 @@ const AsideBarMenu = () => {
 			icon: <FaCalendarDays />,
 		},
 	]
-
-	const handleToggleOpenMenu = () => {
-		setIsMenuOpen(!isMenuOpen)
-		setMenuWidth(isMenuOpen ? 45 : 200)
-	}
 
 	return (
 		<Box
@@ -61,7 +55,9 @@ const AsideBarMenu = () => {
 						<Box as='span' fontSize='3rem'>
 							{link.icon}
 						</Box>
-						<Text>{link.title}</Text>
+						<Text opacity={isMenuOpen ? 1 : 0} transition='0.5s'>
+							{link.title}
+						</Text>
 					</NavLink>
 				))}
 			</VStack>

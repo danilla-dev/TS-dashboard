@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { useUsersData } from '../hooks/useUsersData'
+import React from 'react'
 import { Users } from '../types/users.types'
 import { Table, HStack, VStack } from '@chakra-ui/react'
 import {
@@ -8,40 +7,19 @@ import {
 	PaginationItems,
 	PaginationNextTrigger,
 } from '../components/ui/pagination'
-import { pre, use } from 'framer-motion/client'
-
+import { useTable } from '../hooks/useTable'
 const UsersTable: React.FC = () => {
-	const { filteredData } = useUsersData()
-	const [page, setPage] = useState(1)
-	const itemsPerPage = 20
-	const columnHeaders = ['Name', 'Email', 'Status', 'Last active']
-
-	if (!filteredData) {
-		console.log('Skeleton in future')
+	const tableData = useTable()
+	if (!tableData) {
 		return null
 	}
-	const startIndex = (page - 1) * itemsPerPage
-	const endIndex = startIndex + itemsPerPage
-	const pageData = filteredData.slice(startIndex, endIndex)
+	const { pageData, handleChangeNextPage, handleChangePrevPage, handleChangePage, filteredData, page, itemsPerPage } =
+		tableData
 
-	useEffect(() => {
-		if (page > Math.ceil(filteredData.length / itemsPerPage)) {
-			setPage(1)
-		}
-	}, [filteredData])
-
-	const handleChangeNextPage = () => {
-		setPage(prev => prev + 1)
-	}
-	const handleChangePrevPage = () => {
-		setPage(prev => prev - 1)
-	}
-	const handleChangePage = (e: React.MouseEvent<HTMLButtonElement>) => {
-		setPage(Number(e.currentTarget.textContent))
-	}
+	const columnHeaders = ['Name', 'Email', 'Status', 'Last active']
 
 	return (
-		<VStack w='100%'>
+		<VStack w='100%' pb={{ base: 75, lg: 50 }}>
 			<PaginationRoot count={filteredData.length} pageSize={itemsPerPage} page={page}>
 				<HStack wrap='wrap'>
 					<PaginationPrevTrigger color='textSecondary' onClick={handleChangePrevPage} />
@@ -50,7 +28,7 @@ const UsersTable: React.FC = () => {
 				</HStack>
 			</PaginationRoot>
 			<Table.ScrollArea borderWidth='1px' w='100%' maxH='50%' borderRadius={5}>
-				<Table.Root size={'md'} stickyHeader bgColor='background' interactive>
+				<Table.Root size={{ base: 'md', lg: 'lg' }} stickyHeader bgColor='background' interactive>
 					<Table.Header>
 						<Table.Row bgColor='secondary'>
 							{columnHeaders.map((header: string, index: number) => (

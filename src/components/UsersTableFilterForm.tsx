@@ -17,11 +17,12 @@ const UsersTableFilterForm: React.FC = () => {
 							type='text'
 							placeholder='Search users'
 							bgColor='background'
+							size={{ base: 'md', lg: 'lg' }}
 							onChange={e => filterUsersByName(e.target.value)}
 						/>
 					</Field>
 					<Field label='Status:' maxW='45%'>
-						<NativeSelectRoot>
+						<NativeSelectRoot size={{ base: 'md', lg: 'lg' }}>
 							<NativeSelectField
 								bgColor='background'
 								name='status'
