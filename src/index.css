@@ -1,6 +1,7 @@
 /* Ustawienia dla całego przewijaka */
 ::-webkit-scrollbar {
-	width: 6px; /* Szerokość pionowego przewijaka */
+	width: 4px; /* Szerokość pionowego przewijaka */
+	height: 4px; /* Wysokość poziomego przewijaka */
 }
 
 /* Ustawienia dla tła przewijaka */

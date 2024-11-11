@@ -5,7 +5,7 @@ export const cardRecipe = defineRecipe({
 		borderRadius: '0.6em', // Większe zaokrąglenie
 		// boxShadow: '0 4px 12px rgba(122, 92, 250, 0.5)', // Subtelny cień
 		padding: '0.5em',
-		backgroundColor: '{colors.primary}', // Kolor tła karty z tokena
+		backgroundColor: '{colors.cardBackground}', // Kolor tła karty z tokena
 		color: '{colors.textPrimary}', // Kolor tekstu z tokena
 		width: '45%',
 		minWidth: '150px',

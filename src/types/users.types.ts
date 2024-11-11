@@ -6,3 +6,7 @@ export interface Users {
 	lastActive: string
 	status: 'Active' | 'Inactive'
 }
+
+export interface UsersData {
+	data?: Users[] | null | undefined
+}

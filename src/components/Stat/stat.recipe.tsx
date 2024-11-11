@@ -8,7 +8,7 @@ export const statRecipe = defineRecipe({
 		justifyContent: 'center',
 		padding: '0.5em',
 		borderRadius: '0.6em',
-		backgroundColor: '{colors.primary}',
+		backgroundColor: '{colors.cardBackground}',
 		color: '{colors.textPrimary}',
 		// boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
 		// transition: 'transform 0.3s ease, box-shadow 0.3s ease',

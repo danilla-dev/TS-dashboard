@@ -24,6 +24,7 @@
     "recharts": "^2.13.3"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^3.1.1",
     "@eslint/js": "^9.13.0",
     "@tanstack/router-devtools": "^1.79.0",
     "@tanstack/router-plugin": "^1.79.0",

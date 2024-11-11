@@ -13,8 +13,8 @@ function App() {
 	return (
 		<Box display='flex' direction='row' id='app'>
 			{isDesktop ? <AsideBarMenu /> : <Navigation />}
-			<Box as='main' id='main' p='2em' h='100vh' maxW={1400} ml='auto' mr='auto' overflowY='auto'>
-				<VStack minH={{ base: '100vh', lg: 'unset' }} pb={{ base: 100, lg: 'unset' }}>
+			<Box as='main' id='main' p='2em' h='100vh' maxW={1400} ml='auto' mr='auto' overflowY='auto' w='100%'>
+				<VStack maxH='100%' className='main-sections-container' overflow='hidden'>
 					<Routes>
 						<Route path='/' element={<Dashboard />}></Route>
 						<Route path='/users' element={<Users />}></Route>
