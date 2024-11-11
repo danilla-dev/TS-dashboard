@@ -23,6 +23,8 @@ interface UsersProviderProps {
 export const UsersProvider: React.FC<UsersProviderProps> = ({ children }) => {
 	const [originalData, setOriginalData] = useState<Users[] | null>([])
 	const [filteredData, setFilteredData] = useState<Users[] | null>([])
+	const [statusFilter, setStatusFilter] = useState<string>('All')
+	const [nameFilter, setNameFilter] = useState<string>('')
 
 	const queryKey = 'usersData'
 
@@ -63,26 +65,27 @@ export const UsersProvider: React.FC<UsersProviderProps> = ({ children }) => {
 		}
 	}, [data])
 
-	const filterUsersByStatus = (option: string) => {
-		const newData = filteredData?.filter((user: Users) => user?.status === option)
-		if (option === 'All') {
-			setFilteredData(originalData)
-		} else if (newData) {
-			setFilteredData(newData)
+	const filterUsers = (status: string, name: string) => {
+		let filtered = originalData || []
+
+		if (status !== 'All') {
+			filtered = filtered.filter((user: Users) => user.status === status)
 		}
+
+		if (name !== '') {
+			filtered = filtered.filter((user: Users) => user.name.toLowerCase().includes(name.toLowerCase()))
+		}
+		
+		setFilteredData(filtered)
+	}
+	const filterUsersByStatus = (option: string) => {
+		setStatusFilter(option)
+		filterUsers(option, nameFilter)
 	}
 
 	const filterUsersByName = (option: string) => {
-		if (option !== '') {
-			if (data) {
-				const newData = data.filter((user: Users) => user.name.toLowerCase().includes(option.toLowerCase()))
-				setFilteredData(newData)
-			}
-		} else {
-			if (data) {
-				setFilteredData(data)
-			}
-		}
+		setNameFilter(option)
+		filterUsers(statusFilter, option)
 	}
 
 	return (

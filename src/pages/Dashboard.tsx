@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
 		{ id: 'trafficSources', title: 'Traffic Sources', value: data?.trafficSources },
 	]
 	return (
-		<VStack id='dashboard' gap='2em' as='section'>
+		<VStack id='dashboard' gap='2em' as='section' pb={{ base: 75, lg: 50 }}>
 			<HStack
 				className='dashboard-data-cards-container'
 				flexWrap='wrap'
