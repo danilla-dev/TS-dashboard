@@ -1,5 +1,4 @@
 import { Box, useBreakpointValue } from '@chakra-ui/react'
-import React from 'react'
 
 const AsideBarMenu = () => {
 	const isDesktop = useBreakpointValue({ base: false, lg: true })

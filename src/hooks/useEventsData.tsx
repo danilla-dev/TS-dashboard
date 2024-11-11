@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { faker } from '@faker-js/faker'
 import { Event } from '../types/events.types'
 import { useQuery } from 'react-query'

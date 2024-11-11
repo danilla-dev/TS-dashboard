@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useState, useEffect, ReactNode } from 'react'
 import { useQuery } from 'react-query'
 import { faker } from '@faker-js/faker'
 import { Users } from '../types/users.types'
@@ -35,7 +35,7 @@ export const UsersProvider: React.FC<UsersProviderProps> = ({ children }) => {
 		sessionStorage.setItem(queryKey, JSON.stringify(data))
 	}
 
-	const { data, isLoading, isError } = useQuery<Users[]>(
+	const { data } = useQuery<Users[]>(
 		[queryKey],
 		() => {
 			const dataFromStorage = loadDataFromStorage()

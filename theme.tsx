@@ -1,4 +1,4 @@
-import { createSystem, defaultConfig, defineLayerStyles, defineTokens } from '@chakra-ui/react'
+import { createSystem, defaultConfig, defineTokens } from '@chakra-ui/react'
 
 const tokens = defineTokens({
 	colors: {

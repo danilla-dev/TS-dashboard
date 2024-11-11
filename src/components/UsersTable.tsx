@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useUsersData } from '../hooks/useUsersData'
 import { Users } from '../types/users.types'
 import { Table } from '@chakra-ui/react'

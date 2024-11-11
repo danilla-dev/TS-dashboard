@@ -2,7 +2,6 @@ import React from 'react'
 import { VStack } from '@chakra-ui/react'
 import UsersTableFilterForm from '../components/UsersTableFilterForm'
 import UsersTable from '../components/UsersTable'
-import { useUsersData } from '../hooks/useUsersData'
 import { UsersProvider } from '../contexts/useUsersContext'
 
 const Users: React.FC = () => {
