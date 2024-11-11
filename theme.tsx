@@ -109,15 +109,25 @@ export const system = createSystem(defaultConfig, {
 			color: '#B3B3B3', // Subtelny kolor tekstu
 		},
 		a: {
-			color: '#00FFB2', // Zielony akcent
+			display: 'flex',
+			flexDirection: 'row',
+			alignItems: 'center',
+			justifyContent: 'flex-start',
 			textDecoration: 'none',
 			_hover: {
 				textDecoration: 'underline',
 			},
 		},
+
+		' a p ': {
+			fontSize: '2rem',
+		},
+		'a.active p': {
+			color: '#FFD700',
+		},
 		'a svg': {
 			color: '#EAEAEA',
-			marginRight: '0.5em',
+			marginRight: '10px',
 		},
 		'a.active svg': {
 			color: '#FFD700',

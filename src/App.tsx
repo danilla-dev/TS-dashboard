@@ -9,11 +9,20 @@ import { Box, useBreakpointValue, VStack } from '@chakra-ui/react'
 
 function App() {
 	const isDesktop = useBreakpointValue({ base: false, lg: true })
-	console.log(isDesktop)
 	return (
-		<Box display='flex' direction='row' id='app'>
+		<Box display='flex' direction='row' id='app' overflowX='auto'>
 			{isDesktop ? <AsideBarMenu /> : <Navigation />}
-			<Box as='main' id='main' p='2em' h='100vh' maxW={1400} ml='auto' mr='auto' overflowY='auto' w='100%'>
+			<Box
+				as='main'
+				id='main'
+				p='2em 3em'
+				h='100vh'
+				maxW={1400}
+				ml='auto'
+				mr='auto'
+				// overflowY={{ base: 'auto', lg: 'hidden' }}
+				w='100%'
+			>
 				<VStack maxH='100%' className='main-sections-container'>
 					<Routes>
 						<Route path='/' element={<Dashboard />}></Route>

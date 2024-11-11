@@ -6,9 +6,24 @@ import { NavLink } from 'react-router-dom'
 import { NavLinkType } from '../../types/navigation.types'
 
 const navLinks: NavLinkType[] = [
-	{ to: '/', icon: <AiOutlineDashboard /> },
-	{ to: '/users', icon: <FaUsers /> },
-	{ to: '/events', icon: <FaCalendarDays /> },
+	{
+		id: 'dashboard',
+		title: 'Dashboard',
+		to: '/',
+		icon: <AiOutlineDashboard />,
+	},
+	{
+		id: 'users',
+		title: 'Users',
+		to: '/users',
+		icon: <FaUsers />,
+	},
+	{
+		id: 'events',
+		title: 'Events',
+		to: '/events',
+		icon: <FaCalendarDays />,
+	},
 ]
 
 const Navigation: React.FC = () => {

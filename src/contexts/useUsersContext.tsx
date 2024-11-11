@@ -44,7 +44,7 @@ export const UsersProvider: React.FC<UsersProviderProps> = ({ children }) => {
 			if (dataFromStorage) {
 				return dataFromStorage
 			} else {
-				const generatedData = generateUsersData(60)
+				const generatedData = generateUsersData(120)
 				saveDataToStorage(generatedData)
 				return generatedData
 			}
@@ -75,7 +75,7 @@ export const UsersProvider: React.FC<UsersProviderProps> = ({ children }) => {
 		if (name !== '') {
 			filtered = filtered.filter((user: Users) => user.name.toLowerCase().includes(name.toLowerCase()))
 		}
-		
+
 		setFilteredData(filtered)
 	}
 	const filterUsersByStatus = (option: string) => {
