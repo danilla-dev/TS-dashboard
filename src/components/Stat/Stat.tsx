@@ -1,6 +1,6 @@
 import { chakra, HTMLChakraProps } from '@chakra-ui/react'
 import { AiOutlineArrowUp, AiOutlineArrowDown } from 'react-icons/ai'
-import { statRecipe, statLabelRecipe, statValueTextRecipe, statValueUnitRecipe } from './stat.recipe'
+import { statRecipe, statLabelRecipe, statValueUnitRecipe } from './stat.recipe'
 export interface StatProps extends HTMLChakraProps<'button'> {
 	size?: 'sm' | 'md' | 'lg' | { md: 'md' | 'lg'; lg: 'lg' | 'wide' }
 }
@@ -31,7 +31,7 @@ Stat.ValueText = ({ value, formatOptions, ...props }) => {
 	}).format(value ?? 0)
 
 	return (
-		<chakra.span fontWeight='bold' color='primary.muted' fontSize='1.6rem' {...props}>
+		<chakra.span fontWeight='bold' color='textSecondary' fontSize='1.6rem' {...props}>
 			{formattedValue}
 		</chakra.span>
 	)

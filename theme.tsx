@@ -2,17 +2,18 @@ import { createSystem, defaultConfig, defineLayerStyles, defineTokens } from '@c
 
 const tokens = defineTokens({
 	colors: {
-		primary: { value: '#7A5CFAFF' }, // Fiolet wpadający w niebieski - główny kolor
-		secondary: { value: '#4B3A77' }, // Ciemny fiolet - pomocniczy kolor
-		accent: { value: '#00FFB2' }, // Jasny neonowy zielony - akcentowy (bez zmian)
-		background: { value: '#1E1B29' }, // Tło - ciemny fioletowo-szary
-		fg: { value: '#D0D0D0' }, // Kolor tekstu - jaśniejszy szary
-		muted: { value: '#A5A5A5' }, // Stonowany kolor tekstu - szary
-		success: { value: '#5FD68A' }, // Kolor sukcesu - jaśniejszy zielony
-		warning: { value: '#F5A623' }, // Kolor ostrzeżenia - ciepły pomarańczowy
-		error: { value: '#FF6B6B' }, // Kolor błędu - jaśniejszy czerwony
-		textPrimary: { value: '#EAEAEA' }, // Kolor głównego tekstu - bardzo jasny szary
-		textSecondary: { value: '#B5B5B5' }, // Kolor tekstu drugorzędnego
+		primary: { value: '#1C1248' }, // Bardzo ciemny, głęboki fiolet - główny kolor
+		secondary: { value: '#301B4F' }, // Głęboki, przytłumiony fiolet - kolor pomocniczy
+		cardBackground: { value: '#2A1842' }, // Jeszcze ciemniejszy odcień dla kart
+		accent: { value: '#FFD700' }, // Jasny złoty - akcentowy kolor
+		background: { value: '#0F0E17' }, // Bardzo ciemne tło - prawie czarny z fiołkowym odcieniem
+		fg: { value: '#E5E5E5' }, // Kolor tekstu - jasny, aby kontrastować z ciemnym tłem
+		muted: { value: '#A8A8A8' }, // Stonowany szary - dla mniej istotnych elementów
+		success: { value: '#3BA55D' }, // Głęboki, ciemnozielony - kolor sukcesu
+		warning: { value: '#E48D30' }, // Ciepły, przygaszony pomarańczowy - kolor ostrzeżenia
+		error: { value: '#D64545' }, // Głęboki czerwony - kolor błędu
+		textPrimary: { value: '#F0F0F0' }, // Bardzo jasny szary - główny kolor tekstu
+		textSecondary: { value: '#C7C7C7' }, // Kolor tekstu drugorzędnego
 		buttonText: { value: '#FFFFFF' }, // Kolor tekstu na przyciskach
 	},
 	fonts: {
@@ -119,7 +120,7 @@ export const system = createSystem(defaultConfig, {
 			marginRight: '0.5em',
 		},
 		'a.active svg': {
-			color: '#00FFB2',
+			color: '#FFD700',
 		},
 	},
 	theme: { tokens },

@@ -1,0 +1,22 @@
+/* Ustawienia dla całego przewijaka */
+::-webkit-scrollbar {
+	width: 6px; /* Szerokość pionowego przewijaka */
+}
+
+/* Ustawienia dla tła przewijaka */
+::-webkit-scrollbar-track {
+	background-color: #252135; /* Kolor tła przewijaka */
+	border-radius: 10px; /* Zaokrąglone rogi */
+}
+
+/* Ustawienia dla uchwytu (thumb) przewijaka */
+::-webkit-scrollbar-thumb {
+	background-color: #351e53; /* Kolor uchwytu */
+	border-radius: 10px; /* Zaokrąglone rogi uchwytu */
+	border: 1px solid #1b102b; /* Opcjonalny obramowanie */
+}
+
+/* Ustawienia dla uchwytu w stanie najechania */
+::-webkit-scrollbar-thumb:hover {
+	background-color: #555; /* Kolor uchwytu po najechaniu */
+}
