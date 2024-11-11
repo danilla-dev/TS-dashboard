@@ -9,9 +9,8 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from 'recharts'
-import { chartData, LinechartProps } from '../types/dashboard.types'
+import { LinechartProps } from '../types/dashboard.types'
 import { Card } from './Card/Card'
-import { DashboardCardData, chartsData } from '../types/dashboard.types'
 
 const LineChartCard: React.FC<LinechartProps> = ({ chartData, title }) => {
 	const [xAxisKey, valueKey] = chartData && chartData.length > 0 ? Object.keys(chartData[0]) : ['x', 'y']
@@ -24,7 +23,7 @@ const LineChartCard: React.FC<LinechartProps> = ({ chartData, title }) => {
 					<LineChartComponent data={chartData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
 						<CartesianGrid strokeDasharray='2 2' />
 						<XAxis dataKey={xAxisKey} stroke='#EAEAEA' />
-						<YAxis width={45} stroke='#EAEAEA' />
+						<YAxis width={40} stroke='#EAEAEA' />
 						<Tooltip labelStyle={{ color: '#1E1B29' }} contentStyle={{ color: '#00FFB2' }} />
 						<Legend values='' iconType='square' color='#82ca9d' />
 						<Line type='monotone' dataKey={valueKey} stroke='#82ca9d' />

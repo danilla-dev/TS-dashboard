@@ -1,9 +1,7 @@
 import React from 'react'
 import { HStack, VStack } from '@chakra-ui/react'
 import { useDashboardData } from '../hooks/useDashboardData'
-import { Card } from '../components/Card/Card'
 import { DashboardCardData, chartData, chartsData } from '../types/dashboard.types'
-import { Stat } from '../components/Stat/Stat'
 import LineChartCard from '../components/LineChartCard'
 import DashboardStats from '../components/DashboardStats'
 
@@ -26,8 +24,15 @@ const Dashboard: React.FC = () => {
 		{ id: 'trafficSources', title: 'Traffic Sources', value: data?.trafficSources },
 	]
 	return (
-		<VStack id='dashboard' minH='100vh' gap='2em'>
-			<HStack className='dashboard-data-cards-container' flexWrap='wrap' align='center' justify='center' gap='1.5em'>
+		<VStack id='dashboard' minH={{ base: '100vh', lg: 'unset' }} gap='2em' pb={{ base: 100, lg: 'unset' }}>
+			<HStack
+				className='dashboard-data-cards-container'
+				flexWrap='wrap'
+				align='center'
+				justify='space-between'
+				gap='1.5em'
+				w='100%'
+			>
 				{cardData.map(card => (
 					<DashboardStats key={card.id} card={card as DashboardCardData} />
 				))}
