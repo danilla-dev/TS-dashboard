@@ -5,4 +5,5 @@ export interface Event {
 	date: string
 	participants: number
 	status: 'Upcoming' | 'Ongoing' | 'Completed'
+	description?: string
 }

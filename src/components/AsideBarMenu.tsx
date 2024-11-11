@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
 import { Box, Text, VStack } from '@chakra-ui/react'
 import { AiOutlineDashboard, AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
 import { FaUsers, FaCalendarDays } from 'react-icons/fa6'
 import { NavLink } from 'react-router-dom'
-import { fa } from '@faker-js/faker'
 import { useAsideMenu } from '../hooks/useAsideMenu'
 
 const AsideBarMenu = () => {

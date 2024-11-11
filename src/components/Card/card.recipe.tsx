@@ -2,6 +2,7 @@ import { defineRecipe } from '@chakra-ui/react'
 
 export const cardRecipe = defineRecipe({
 	base: {
+		position: 'relative',
 		borderRadius: '0.6em', // Większe zaokrąglenie
 		// boxShadow: '0 4px 12px rgba(122, 92, 250, 0.5)', // Subtelny cień
 		padding: '0.5em',
@@ -56,7 +57,7 @@ export const cardRecipe = defineRecipe({
 })
 export const cardHeaderRecipe = defineRecipe({
 	base: {
-		fontSize: '1.6rem',
+		fontSize: '1.8rem',
 		fontWeight: 'bold',
 		marginBottom: '1em',
 		color: '{colors.textPrimary}',
@@ -65,14 +66,17 @@ export const cardHeaderRecipe = defineRecipe({
 
 export const cardBodyRecipe = defineRecipe({
 	base: {
-		fontSize: '1.4rem',
+		fontSize: '1.6rem',
 		color: '{colors.textSecondary}',
 	},
 })
 export const cardFooterRecipe = defineRecipe({
 	base: {
-		fontSize: '0.9rem',
+		position: 'absolute',
+		bottom: '0',
+		fontSize: '1.4rem',
 		color: '{colors.textMuted}',
 		marginTop: '1em',
+		marginBottom: '1em',
 	},
 })

@@ -8,6 +8,7 @@ const generateEventsData = (count = 15): Event[] => {
 		const endDate = new Date('2025-12-31T23:59:59.999Z')
 		const eventDate = faker.date.between({ from: startDate, to: endDate }).toISOString().split('T')[0]
 		const today = new Date().toISOString().split('T')[0]
+		const description = faker.commerce.productDescription()
 
 		let status: 'Upcoming' | 'Ongoing' | 'Completed'
 		if (eventDate > today) {
@@ -24,6 +25,7 @@ const generateEventsData = (count = 15): Event[] => {
 			date: eventDate,
 			participants: faker.number.int({ min: 50, max: 500 }),
 			status: status,
+			description: description,
 		}
 	})
 }
@@ -39,16 +41,24 @@ export const useEventsData = (): Event[] | null => {
 		sessionStorage.setItem(queryKey, JSON.stringify(data))
 	}
 
+	const sortEventsByStatus = (events: Event[]): Event[] => {
+		return events.sort((a, b) => {
+			if (a.status === 'Upcoming' && b.status !== 'Upcoming') return -1
+			if (a.status !== 'Upcoming' && b.status === 'Upcoming') return 1
+			return 0
+		})
+	}
 	const { data, isLoading, isError } = useQuery<Event[]>(
 		[queryKey],
 		() => {
 			const dataFromStorage = loadDataFromStorage()
 			if (dataFromStorage) {
-				return dataFromStorage
+				return sortEventsByStatus(dataFromStorage)
 			} else {
 				const generatedData = generateEventsData(15)
-				saveDataToStorage(generatedData)
-				return generatedData
+				const sortedEvents = sortEventsByStatus(generatedData)
+				saveDataToStorage(sortedEvents)
+				return sortedEvents
 			}
 		},
 		{

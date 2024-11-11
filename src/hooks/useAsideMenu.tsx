@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const useAsideMenu = () => {
 	const [menuWidth, setMenuWidth] = useState(45)
@@ -10,4 +10,3 @@ export const useAsideMenu = () => {
 	}
 	return { menuWidth, isMenuOpen, handleToggleOpenMenu }
 }
-
