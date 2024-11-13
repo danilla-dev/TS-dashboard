@@ -18,6 +18,10 @@ const LineChartCard: React.FC<LinechartProps> = ({ chartData, title }) => {
 
 	const [xAxisKey, valueKey] = chartData && chartData.length > 0 ? Object.keys(chartData[0]) : ['x', 'y']
 
+	console.log('chartData:', chartData)
+	console.log('xAxisKey:', xAxisKey)
+	console.log('valueKey:', valueKey)
+
 	return (
 		<Card className='dashboard-data-card-chart' borderType='solid' size='wide'>
 			<Card.Header textAlign='center'>{title}</Card.Header>
