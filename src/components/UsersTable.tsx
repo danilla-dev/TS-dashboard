@@ -20,8 +20,8 @@ const UsersTable: React.FC = () => {
 
 	return (
 		<VStack w='100%' pb={{ base: 75, lg: 50 }}>
-			<PaginationRoot count={filteredData.length} pageSize={itemsPerPage} page={page}>
-				<HStack wrap='wrap'>
+			<PaginationRoot count={filteredData.length} pageSize={itemsPerPage} page={page} size={{base: 'md', md:'lg'}} p={{base: '1em 0', md: '1.5em 0'}}>
+				<HStack wrap='wrap' >
 					<PaginationPrevTrigger color='textSecondary' onClick={handleChangePrevPage} />
 					<PaginationItems color='textSecondary' onClick={handleChangePage} />
 					<PaginationNextTrigger color='textSecondary' onClick={handleChangeNextPage} />

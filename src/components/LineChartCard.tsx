@@ -24,7 +24,7 @@ const LineChartCard: React.FC<LinechartProps> = ({ chartData, title }) => {
 			<Card.Body>
 				<ResponsiveContainer width='100%' aspect={1} maxHeight={300}>
 					<LineChartComponent data={chartData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-						<CartesianGrid strokeDasharray='1 1' />
+						<CartesianGrid strokeDasharray='5 5' />
 						<XAxis dataKey={xAxisKey} stroke='#EAEAEA' />
 						<YAxis width={isDesktop ? 55 : 45} stroke='#EAEAEA' />
 						<Tooltip labelStyle={{ color: '#1E1B29' }} contentStyle={{ color: '#0D8F68FF' }} />

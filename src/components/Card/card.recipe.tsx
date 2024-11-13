@@ -45,7 +45,7 @@ export const cardRecipe = defineRecipe({
 				border: '1px solid {colors.muted}', // Subtelne obramowanie
 			},
 			outline: {
-				border: '2px solid {colors.accent}',
+				border: '1px solid {colors.accent}',
 			},
 			none: {
 				border: 'none',
