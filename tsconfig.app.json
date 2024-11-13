@@ -22,5 +22,5 @@
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true
 	},
-	"include": ["src", "theme.tsx"]
+	"include": ["src", "theme.tsx", "src/setupTest.ts"]
 }

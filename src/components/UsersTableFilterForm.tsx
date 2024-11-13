@@ -17,6 +17,7 @@ const UsersTableFilterForm: React.FC = () => {
 							type='text'
 							placeholder='Search users'
 							bgColor='background'
+							data-testid='SearchInput'
 							size={{ base: 'md', lg: 'lg' }}
 							onChange={e => filterUsersByName(e.target.value)}
 						/>

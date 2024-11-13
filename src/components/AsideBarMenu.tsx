@@ -1,31 +1,11 @@
 import { Box, Text, VStack } from '@chakra-ui/react'
-import { AiOutlineDashboard, AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
-import { FaUsers, FaCalendarDays } from 'react-icons/fa6'
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
 import { useAsideMenu } from '../hooks/useAsideMenu'
+import { navigationLinks } from '../constants/navigationLinks'
 
 const AsideBarMenu = () => {
 	const { menuWidth, isMenuOpen, handleToggleOpenMenu } = useAsideMenu()
-	const navigationLinks = [
-		{
-			id: 'dashboard',
-			title: 'Dashboard',
-			to: '/',
-			icon: <AiOutlineDashboard />,
-		},
-		{
-			id: 'users',
-			title: 'Users',
-			to: '/users',
-			icon: <FaUsers />,
-		},
-		{
-			id: 'events',
-			title: 'Events',
-			to: '/events',
-			icon: <FaCalendarDays />,
-		},
-	]
 
 	return (
 		<Box
@@ -40,7 +20,7 @@ const AsideBarMenu = () => {
 			transition='0.3s'
 		>
 			<VStack align='start' h='30%' justify='space-evenly' ml='1em'>
-				<Box as='button' fontSize='4rem' onClick={handleToggleOpenMenu} cursor='pointer'>
+				<Box as='button' fontSize='4rem' onClick={handleToggleOpenMenu} cursor='pointer' data-testid='toggle-menu-button'>
 					{isMenuOpen ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
 				</Box>
 				{navigationLinks.map((link, index) => (
