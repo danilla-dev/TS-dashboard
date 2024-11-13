@@ -48,14 +48,12 @@ describe('UsersTable Component', () => {
 			const filtered = mockUsers.filter(user => user.name.includes(name))
 			filteredData.length = 0
 			filteredData.push(...filtered)
-			console.log(`filteredData after filterUsersByName: ${JSON.stringify(filteredData)}`)
 		})
 
 		filterUsersByStatus = vi.fn((status: string) => {
 			const filtered = mockUsers.filter(user => user.status === status)
 			filteredData.length = 0
 			filteredData.push(...filtered)
-			console.log(`filteredData after filterUsersByStatus: ${JSON.stringify(filteredData)}`)
 		})
 
 		mockUseUsersData.mockReturnValue({
@@ -113,7 +111,6 @@ describe('UsersTable Component', () => {
 		filteredUsers.forEach(user => {
 			expect(screen.getByText(user.name)).toBeInTheDocument()
 		})
-		console.log(filteredUsers);
 	})
 
 	it('filters users by status', async () => {
@@ -133,6 +130,5 @@ describe('UsersTable Component', () => {
 		filteredUsers.forEach(user => {
 			expect(screen.getByText(user.name)).toBeInTheDocument()
 		})
-		console.log(filteredUsers)
 	})
 })
