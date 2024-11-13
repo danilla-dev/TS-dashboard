@@ -27,7 +27,7 @@ const UsersTable: React.FC = () => {
 					<PaginationNextTrigger color='textSecondary' onClick={handleChangeNextPage} />
 				</HStack>
 			</PaginationRoot>
-			<Table.ScrollArea borderWidth='1px' w='100%' maxH='50%' borderRadius={5}>
+			<Table.ScrollArea borderWidth='1px' borderColor='muted' w='100%' maxH='50%' borderRadius={5}>
 				<Table.Root size={{ base: 'md', lg: 'lg' }} stickyHeader bgColor='background' interactive>
 					<Table.Header>
 						<Table.Row bgColor='secondary'>
@@ -40,11 +40,11 @@ const UsersTable: React.FC = () => {
 					</Table.Header>
 					<Table.Body>
 						{pageData.map((user: Users, index: number) => (
-							<Table.Row bgColor={index % 2 === 0 ? 'cardBackground' : 'secondary'} key={user.id}>
-								<Table.Cell color='textPrimary'>{user.name}</Table.Cell>
-								<Table.Cell color='textPrimary'>{user.email}</Table.Cell>
-								<Table.Cell color='textPrimary'>{user.status}</Table.Cell>
-								<Table.Cell color='textPrimary'>{user.lastActive}</Table.Cell>
+							<Table.Row bgColor={index % 2 === 0 ? 'cardBackground' : 'secondary'} key={user.id} >
+								<Table.Cell color='textPrimary' p='0.75em' >{user.name}</Table.Cell>
+								<Table.Cell color='textPrimary' p='0.75em' >{user.email}</Table.Cell>
+								<Table.Cell color='textPrimary' p='0.75em' >{user.status}</Table.Cell>
+								<Table.Cell color='textPrimary' p='0.75em' >{user.lastActive}</Table.Cell>
 							</Table.Row>
 						))}
 					</Table.Body>

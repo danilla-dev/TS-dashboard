@@ -59,12 +59,29 @@ const tokens = defineTokens({
 
 export const system = createSystem(defaultConfig, {
 	globalCss: {
+		"::-webkit-scrollbar": {
+			width: "4px" ,
+			height: "4px" 
+		},
+		"::-webkit-scrollbar-track": {
+			backgroundColor: "#81411b", /* Kolor tła przewijaka */
+			borderRadius: "10px", /* Zaokrąglone rogi */
+		},
+		"::-webkit-scrollbar-thumb": {
+			backgroundColor: "#DA8B5E", /* Kolor uchwytu */
+			borderRadius: "10px", /* Zaokrąglone rogi uchwytu */
+			border: "1px solid #5c280a" /* Opcjonalny obramowanie */
+		},
+		"::-webkit-scrollbar-thumb:hover": {
+			backgroundColor: '#555' /* Kolor uchwytu po najechaniu */
+		},
 		'html, body': {
 			fontFamily: "Source Code Pro",
 			fontSize: '62.5%',
 			margin: 0,
 			padding: 0,
 			backgroundColor: '#1A1C20',
+			background: 'linear-gradient(165deg, #1A1C20 0%, #26292E 50%, #3A3E44 100%)',
 			color: '#EAEAEA',
 		},
 		'*': {

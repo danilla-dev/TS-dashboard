@@ -11,19 +11,22 @@ import {
 } from 'recharts'
 import { LinechartProps } from '../types/dashboard.types'
 import { Card } from './Card/Card'
+import { useBreakpointValue } from '@chakra-ui/react'
 
 const LineChartCard: React.FC<LinechartProps> = ({ chartData, title }) => {
+	const isDesktop = useBreakpointValue({ base: false, lg: true })
+
 	const [xAxisKey, valueKey] = chartData && chartData.length > 0 ? Object.keys(chartData[0]) : ['x', 'y']
 
 	return (
-		<Card className='dashboard-data-card-chart' borderType='none' size='wide'>
+		<Card className='dashboard-data-card-chart' borderType='solid' size='wide'>
 			<Card.Header textAlign='center'>{title}</Card.Header>
 			<Card.Body>
 				<ResponsiveContainer width='100%' aspect={1} maxHeight={300}>
 					<LineChartComponent data={chartData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
 						<CartesianGrid strokeDasharray='1 1' />
 						<XAxis dataKey={xAxisKey} stroke='#EAEAEA' />
-						<YAxis width={55} stroke='#EAEAEA' />
+						<YAxis width={isDesktop ? 55 : 45} stroke='#EAEAEA' />
 						<Tooltip labelStyle={{ color: '#1E1B29' }} contentStyle={{ color: '#0D8F68FF' }} />
 						<Legend values={xAxisKey} iconType='square' />
 						<Line type='monotone' dataKey={valueKey} stroke='#DA8B5E' />

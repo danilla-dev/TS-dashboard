@@ -29,7 +29,7 @@ const Events: React.FC = () => {
 						height='275px'
 						maxW={{ base: '100%', md: '50%' }}
 						p='1.5em'
-						borderType={event.status === 'Upcoming' ? 'outline' : 'none'}
+						borderType={event.status === 'Upcoming' ? 'outline' : 'solid'}
 					>
 						<Card.Header>{event.eventName}</Card.Header>
 						<Card.Body>
