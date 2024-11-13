@@ -2,19 +2,19 @@ import { createSystem, defaultConfig, defineTokens } from '@chakra-ui/react'
 
 const tokens = defineTokens({
 	colors: {
-		primary: { value: '#1C1248' }, // Bardzo ciemny, głęboki fiolet - główny kolor
-		secondary: { value: '#301B4F' }, // Głęboki, przytłumiony fiolet - kolor pomocniczy
-		cardBackground: { value: '#2A1842' }, // Jeszcze ciemniejszy odcień dla kart
-		accent: { value: '#FFD700' }, // Jasny złoty - akcentowy kolor
-		background: { value: '#0F0E17' }, // Bardzo ciemne tło - prawie czarny z fiołkowym odcieniem
-		fg: { value: '#E5E5E5' }, // Kolor tekstu - jasny, aby kontrastować z ciemnym tłem
-		muted: { value: '#A8A8A8' }, // Stonowany szary - dla mniej istotnych elementów
-		success: { value: '#3BA55D' }, // Głęboki, ciemnozielony - kolor sukcesu
-		warning: { value: '#E48D30' }, // Ciepły, przygaszony pomarańczowy - kolor ostrzeżenia
-		error: { value: '#D64545' }, // Głęboki czerwony - kolor błędu
-		textPrimary: { value: '#F0F0F0' }, // Bardzo jasny szary - główny kolor tekstu
-		textSecondary: { value: '#C7C7C7' }, // Kolor tekstu drugorzędnego
-		buttonText: { value: '#FFFFFF' }, // Kolor tekstu na przyciskach
+		primary: { value: '#26292E' }, // Antracytowy, głęboki - główny kolor
+		secondary: { value: '#3A3E44' }, // Przygaszony, cieplejszy odcień antracytu - kolor pomocniczy
+		cardBackground: { value: '#2E3136' }, // Ciemniejszy antracyt - tło kart
+		accent: { value: '#DA8B5E' }, // Miedziany, przygaszony - akcentowy kolor
+		background: { value: '#1A1C20' }, // Bardzo ciemne, antracytowe tło
+		fg: { value: '#D7D7D7' }, // Jasnoszary dla tekstu
+		muted: { value: '#8B8B8B' }, // Stonowany szary dla mniej istotnych elementów
+		success: { value: '#5C7F65' }, // Przygaszony zielony
+		warning: { value: '#D4A760' }, // Ciepły, złoto-brązowy pomarańczowy
+		error: { value: '#C87171' }, // Głęboki, ciepły czerwony
+		textPrimary: { value: '#E3E3E3' }, // Jasnoszary dla głównego tekstu
+		textSecondary: { value: '#B9B9B9' }, // Szary dla tekstu drugorzędnego
+		buttonText: { value: '#F6F6F6' }, // Bardzo jasny szary na przyciski
 	},
 	fonts: {
 		body: { value: 'system-ui, sans-serif' },
@@ -60,11 +60,11 @@ const tokens = defineTokens({
 export const system = createSystem(defaultConfig, {
 	globalCss: {
 		'html, body': {
-			fontFamily: 'system-ui, sans-serif',
+			fontFamily: "Source Code Pro",
 			fontSize: '62.5%',
 			margin: 0,
 			padding: 0,
-			backgroundColor: '#1E1B29',
+			backgroundColor: '#1A1C20',
 			color: '#EAEAEA',
 		},
 		'*': {
@@ -114,23 +114,20 @@ export const system = createSystem(defaultConfig, {
 			alignItems: 'center',
 			justifyContent: 'flex-start',
 			textDecoration: 'none',
-			_hover: {
-				textDecoration: 'underline',
-			},
+			
 		},
-
 		' a p ': {
 			fontSize: '2rem',
 		},
 		'a.active p': {
-			color: '#FFD700',
+			color: '#DA8B5E',
 		},
 		'a svg': {
 			color: '#EAEAEA',
 			marginRight: '10px',
 		},
 		'a.active svg': {
-			color: '#FFD700',
+			color: '#DA8B5E',
 		},
 	},
 	theme: { tokens },

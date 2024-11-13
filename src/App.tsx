@@ -13,7 +13,7 @@ function App() {
 		<Box display='flex' direction='row' id='app' overflowX='auto'>
 			{isDesktop ? <AsideBarMenu /> : <Navigation />}
 			<Box as='main' id='main' p='2em 3em' h='100vh' maxW={1400} ml='auto' mr='auto' w='100%'>
-				<VStack minH='100%' className='main-sections-container'>
+				<VStack minH='100%' className='main-sections-container' pt={{base: '1em', lg: '2em'}}>
 					<Routes>
 						<Route path='/' element={<Dashboard />}></Route>
 						<Route path='/users' element={<Users />}></Route>

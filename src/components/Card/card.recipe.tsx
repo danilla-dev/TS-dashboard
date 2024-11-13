@@ -4,8 +4,9 @@ export const cardRecipe = defineRecipe({
 	base: {
 		position: 'relative',
 		borderRadius: '0.6em', // Większe zaokrąglenie
-		// boxShadow: '0 4px 12px rgba(122, 92, 250, 0.5)', // Subtelny cień
 		padding: '0.5em',
+		boxShadow: 'rgba(255, 255, 255, 0.15) 0px 1px 2px 0px, rgba(255, 255, 255, 0.1) 0px 1px 3px 1px',
+		// boxShadow: 'rgba(204, 219, 232, 0.27) 0px 0px 0.25em, rgba(255, 255, 255, 0.05) 0px 0.25em 1em;',
 		backgroundColor: '{colors.cardBackground}', // Kolor tła karty z tokena
 		color: '{colors.textPrimary}', // Kolor tekstu z tokena
 		width: '45%',
@@ -13,11 +14,8 @@ export const cardRecipe = defineRecipe({
 		flex: '1 1 0', // Rozciągliwość karty
 		transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Płynniejsza animacja
 		_hover: {
-			boxShadow: '0 6px 16px rgba(0, 0, 0, 0.15)', // Zwiększony cień przy hoverze
-			transform: 'translateY(-4px)', // Efekt uniesienia
-		},
-		_focus: {
-			boxShadow: '0 0 0 3px {colors.accent}', // Fokus na karcie
+			// boxShadow: '0px 4px 8px rgba(54, 59, 65, 0.4)', // Subtelny cień
+			transform: 'translateY(-2px)', // Efekt uniesienia
 		},
 	},
 	className: 'card',

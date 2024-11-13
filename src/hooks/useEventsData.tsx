@@ -10,13 +10,13 @@ const generateEventsData = (count = 15): Event[] => {
 		const today = new Date().toISOString().split('T')[0]
 		const description = faker.commerce.productDescription()
 
-		let status: 'Upcoming' | 'Ongoing' | 'Completed'
+		let status: 'Upcoming' | 'Completed'
 		if (eventDate > today) {
 			status = 'Upcoming'
 		} else if (eventDate < today) {
 			status = 'Completed'
 		} else {
-			status = 'Ongoing'
+			status = 'Upcoming'
 		}
 
 		return {

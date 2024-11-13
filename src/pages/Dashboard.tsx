@@ -43,7 +43,7 @@ const Dashboard: React.FC = () => {
 				align='center'
 				justify='center'
 				w='100%'
-				gap='1.5em'
+				gap='2em'
 			>
 				{chartsData.map(chart => (
 					<LineChartCard key={chart.id} chartData={chart.value as chartData[]} title={chart.title} />

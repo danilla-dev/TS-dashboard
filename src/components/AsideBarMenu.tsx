@@ -40,7 +40,7 @@ const AsideBarMenu = () => {
 			transition='0.3s'
 		>
 			<VStack align='start' h='30%' justify='space-evenly' ml='1em'>
-				<Box as='button' fontSize='3rem' onClick={handleToggleOpenMenu} cursor='pointer'>
+				<Box as='button' fontSize='4rem' onClick={handleToggleOpenMenu} cursor='pointer'>
 					{isMenuOpen ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
 				</Box>
 				{navigationLinks.map((link, index) => (
@@ -50,7 +50,7 @@ const AsideBarMenu = () => {
 						end
 						className={({ isActive, isPending }) => (isPending ? 'pending' : isActive ? 'active' : '')}
 					>
-						<Box as='span' fontSize='3rem'>
+						<Box as='span' fontSize='4rem'>
 							{link.icon}
 						</Box>
 						<Text opacity={isMenuOpen ? 1 : 0} transition='0.5s'>
