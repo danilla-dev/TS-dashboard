@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useUsersData } from '../hooks/useUsersData'
+import { paginateData } from '../utils/tableUtils'
 
 export const useTable = () => {
 	const { filteredData } = useUsersData()
@@ -10,9 +11,7 @@ export const useTable = () => {
 		console.log('Skeleton in future')
 		return null
 	}
-	const startIndex = (page - 1) * itemsPerPage
-	const endIndex = startIndex + itemsPerPage
-	const pageData = filteredData.slice(startIndex, endIndex)
+	const pageData = paginateData(filteredData, page, itemsPerPage)
 
 	useEffect(() => {
 		if (page > Math.ceil(filteredData.length / itemsPerPage)) {
